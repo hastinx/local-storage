@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/ls/' element={<List />} />
+        <Route exact path='/ls/' element={<List />} />
         <Route path='/ls/input' element={<Input />} />
       </Routes>
     </Router>
