@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../navbar'
 import { useNavigate } from 'react-router-dom'
 const Input = () => {
+    const [data, setData] = useState([])
+    let list = JSON.parse(localStorage.getItem('table'))
 
-    let data = JSON.parse(localStorage.getItem('table'))
-
-
+    useEffect(() => {
+        setData(list)
+    }, [])
     return (
         <Navbar>
             <div className='d-flex justify-content-center align-items-center bg-dark' style={{ height: '100vh' }}>
