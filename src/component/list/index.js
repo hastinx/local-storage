@@ -1,11 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Navbar from '../navbar'
-import { useNavigate } from 'react-router-dom'
 const List = () => {
-    const [dataTable, setDataTabel] = useState([])
-    const [counter, setCounter] = useState(0)
 
-    const navigate = useNavigate();
     var data = [
         { 'id': 1, 'nama': 'Adam' },
         { 'id': 2, 'nama': 'Hastin' },
@@ -16,21 +12,35 @@ const List = () => {
     // var dataTable = []
 
     // localStorage.removeItem('table')
+
+    //Fungsi untuk menambahkan nama pada list
     const addName = (param) => {
-        if (JSON.parse(localStorage.getItem('table')) !== null) {
+        if (JSON.parse(localStorage.getItem('table')) !== null) { //pengecekan apakah localStorage item table ada atau tidak
+            /**
+             * kita buat variable table untuk menyimpan value dari item localStorage
+             * dan di sini kita buat variable table
+             * ketika localStorage item table ada maka variable table berisi item localStorage
+             */
             var table = JSON.parse(localStorage.getItem('table'))
         } else {
+            /**
+             * jika localStorage item table tidak ada maka variable table kita isi dengan array kosong
+             */
             table = []
         }
 
+        /**
+         pengecekan data yang akan dimasukan ke dalam list, untuk mengetahui data tersebut sudah ada atau belum
+         */
         if (table.some(e => e.id === param.id)) {
-            alert('data anda sudah ada')
+            alert('data anda sudah ada') //jika sudah ada maka akan tampil alert
         } else {
-
+            // jika belum ada maka menambahkan data ke dalam localStorage
             localStorage.setItem('table', JSON.stringify([{ 'id': param.id, 'nama': param.nama }, ...table]))
         }
     }
 
+    //Fungsi untuk menghapus nama pada list
     const deleteName = (param) => {
         let list = JSON.parse(localStorage.getItem('table'))
         var index = list.findIndex(i => i.id === param.id);
