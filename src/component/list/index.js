@@ -16,8 +16,8 @@ const List = () => {
     // var dataTable = []
 
     // localStorage.removeItem('table')
-
-    const addName = (param, e) => {
+    localStorage.setItem('table', "[]")
+    const addName = (param) => {
         if (JSON.parse(localStorage.getItem('table')) !== null) {
             var table = JSON.parse(localStorage.getItem('table'))
         } else {
@@ -29,7 +29,6 @@ const List = () => {
         } else {
 
             localStorage.setItem('table', JSON.stringify([{ 'id': param.id, 'nama': param.nama }, ...table]))
-            setDataTabel(i => [{ 'id': param.id, 'nama': param.nama }, ...i])
         }
     }
 
@@ -59,7 +58,7 @@ const List = () => {
 
                                         <td className='text-center' key={i.id}>{i.nama}</td>
                                         <td className='text-center'>
-                                            <button className='btn btn-sm btn-success col-1 mx-1' onClick={(e) => addName(i, e)}><i className='fa-solid fa-plus' /></button>
+                                            <button className='btn btn-sm btn-success col-1 mx-1' onClick={(e) => addName(i)}><i className='fa-solid fa-plus' /></button>
                                             <button className='btn btn-sm btn-danger col-1 mx-1' onClick={(e) => deleteName(i)}><i className='fa-solid fa-trash' /></button>
                                         </td>
 
