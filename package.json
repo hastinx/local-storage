@@ -1,5 +1,5 @@
 {
-  "homepage":"https://hastinx.github.io/local-storage",
+  "homepage":"https://hastinx.github.io/ls",
   "name": "redux",
   "version": "0.1.0",
   "private": true,
@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -r https://github.com/hastinx/local-storage.git"
+    "deploy": "gh-pages -d build -r https://github.com/hastinx/ls.git"
   },
   "eslintConfig": {
     "extends": [
