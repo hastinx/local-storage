@@ -10,8 +10,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/localstorage/' element={<List />} />
-        <Route path='/localstorage/input' element={<Input />} />
+        <Route path='/localStorage/' element={<List />} />
+        <Route path='/localStorage/input' element={<Input />} />
       </Routes>
     </Router>
   );

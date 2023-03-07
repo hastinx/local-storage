@@ -7,10 +7,10 @@ const Navbar = ({ children }) => {
         <div className='conatiner'>
             <ul className="nav">
                 <li className="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/localstorage/">List</a>
+                    <a class="nav-link active" aria-current="page" href="/localStorage/">List</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="/localstorage/input">Input</a>
+                    <a className="nav-link" href="/localStorage/input">Input</a>
                 </li>
 
             </ul>
