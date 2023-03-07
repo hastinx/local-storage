@@ -33,6 +33,13 @@ const List = () => {
         }
     }
 
+    const deleteName = (param) => {
+        let list = JSON.parse(localStorage.getItem('table'))
+        var index = list.findIndex(i => i.id === param.id);
+        list.splice(index, 1)
+        localStorage.setItem('table', JSON.stringify(list))
+    }
+
 
     return (
         <Navbar>
@@ -53,6 +60,7 @@ const List = () => {
                                         <td className='text-center' key={i.id}>{i.nama}</td>
                                         <td className='text-center'>
                                             <button className='btn btn-sm btn-success col-1 mx-1' onClick={(e) => addName(i, e)}><i className='fa-solid fa-plus' /></button>
+                                            <button className='btn btn-sm btn-danger col-1 mx-1' onClick={(e) => deleteName(i)}><i className='fa-solid fa-trash' /></button>
                                         </td>
 
                                     </tr>
