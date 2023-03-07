@@ -16,7 +16,6 @@ const List = () => {
     // var dataTable = []
 
     // localStorage.removeItem('table')
-    localStorage.setItem('table', "[]")
     const addName = (param) => {
         if (JSON.parse(localStorage.getItem('table')) !== null) {
             var table = JSON.parse(localStorage.getItem('table'))
